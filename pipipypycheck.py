@@ -3,7 +3,7 @@ from tkinter import *
 shkaf = 0
 global flag
 flag = False 
-a = 1 
+a = 0 
  
 def btn_fun(): 
     if a == 1: 
