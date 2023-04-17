@@ -1,19 +1,20 @@
 from tkinter import * 
  
 shkaf = 0
-global flag
+
 flag = False 
 a = 1 
  
-def btn_fun(): 
-    if a == 1: 
-        shkaf = 3 
-    if a == 2: 
-        shkaf = 2 
-    if a == 3: 
-        shkaf = 1 
-    flag = True 
-    print(flag)
+def btn_fun():
+    global flag 
+    global shkaf
+    if a ==1:
+        shkaf=3
+    if a==2:
+        shkaf=2
+    if a==3:
+        shkaf=1
+    flag=True
     window.destroy() 
     
 if not flag: 
@@ -22,7 +23,7 @@ if not flag:
     window.title('СКЛАДЫ') 
     window.geometry('800x600') 
     
-    btn1 = Button(window, text='Склад 1', relief=RIDGE, command=lambda:btn_fun(1)) 
+    btn1 = Button(window, text='Склад 1', relief=RIDGE, command=btn_fun) 
     btn1.grid(column=0, row=0) 
     btn1.place(relx=0.25, rely=0.5) 
     
@@ -43,10 +44,10 @@ if flag:
     sklad.title('Склад' + str(a)) 
     sklad.geometry('800x600') 
     
-    # for i in range(shkaf): 
-    # btn_name = 'btn' + str(i + 1) 
-    # btn = Button(sklad, text = btn_name,relief=RIDGE) 
-    # btn.grid(column=0, row=0) 
-    # btn.place(relx= 0.2 * i, rely=0.2) 
+    for i in range(shkaf): 
+        btn_name = 'btn' + str(i + 1) 
+        btn = Button(sklad, text = btn_name,relief=RIDGE) 
+        btn.grid(column=0, row=0) 
+        btn.place(relx= 0.2 * i, rely=0.2) 
     
     sklad.mainloop()
